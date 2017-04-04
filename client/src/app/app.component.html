@@ -1,3 +1,16 @@
 <h1>
   {{title}}
 </h1>
+<app-contact-list [contacts]="contacts" (select)="contactSelected($event)"></app-contact-list>
+<div *ngIf="selectedContact">
+  Selected: {{selectedContact.firstName}}
+</div>
+
+<md-input-container>
+  <input mdInput [(ngModel)]="helloText" type="text" required
+         placeholder="Type something">
+</md-input-container>
+
+<button md-fab (click)="doSomething()">
+  <md-icon>add</md-icon>
+</button>
