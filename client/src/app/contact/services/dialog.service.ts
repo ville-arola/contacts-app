@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import {MdDialog} from "@angular/material";
 import {Contact} from "../contact";
+import {ContactDialogComponent} from "../contact-dialog/contact-dialog.component";
+import {MapDialogComponent} from "../map-dialog/map-dialog.component";
 
 @Injectable()
 export class DialogService {
-  /*
 
   constructor(private dialog: MdDialog) { }
 
@@ -18,5 +20,4 @@ export class DialogService {
     dialogRef.componentInstance.address = address;
     return dialogRef.afterClosed();
   }
-  */
 }

@@ -1,4 +1,7 @@
-<div *ngFor="let contact of contacts" (click)="contactSelected(contact)">
-  {{contact.firstName + ' ' + contact.lastName}}
-</div>
-
+<app-contact-list-item *ngFor="let contact of contacts"
+                       [contact]="contact"
+                       [remove]="removeContact"
+                       [edit]="editContact"
+                       [showOnMap]="showContactOnMap"
+>
+</app-contact-list-item>

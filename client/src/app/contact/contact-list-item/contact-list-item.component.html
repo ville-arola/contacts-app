@@ -1,6 +1,25 @@
-<p>
-  contact-list-item works!
-</p>
-<i class="material-icons">delete</i>
-<i class="material-icons">mode_edit</i>
-<i class="material-icons">location_on</i>
+<md-card class="contact-list-item">
+  <div md-card-image class="contact-list-item-icon">
+    <md-card-header fxLayout="column" fxLayoutAlign="center center" >
+      <i class="material-icons contact-icon">account_circle</i>
+    </md-card-header>
+  </div>
+  <md-card-content class="contact-list-item-data">
+    <h2 class="contact-list-item-heading">{{contact.firstName}} {{contact.lastName}}</h2>
+    <p>{{contact.streetAddress}}, {{contact.city}}<br />{{contact.phone}}</p>
+  </md-card-content>
+  <md-card-actions fxLayout="row" fxLayoutAlign="space-between end">
+    <div>
+      <button md-icon-button class="contact-list-item-action" (click)="removeContact()">
+        <md-icon class="md-24">delete</md-icon>
+      </button>
+      <button md-icon-button class="contact-list-item-action" (click)="editContact()">
+        <md-icon class="md-24">mode_edit</md-icon>
+      </button>
+    </div>
+    <button md-icon-button class="contact-list-item-action" (click)="showContactOnMap()">
+      <md-icon class="md-24">location_on</md-icon>
+    </button>
+  </md-card-actions>
+</md-card>
+

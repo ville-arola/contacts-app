@@ -1,0 +1,11 @@
+.app-wrap {
+  float: right !important;
+}
+
+.app-button {
+  background-color: #7c0;
+}
+
+@media (max-width: 400px) {
+
+}

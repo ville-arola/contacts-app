@@ -1,0 +1,35 @@
+.material-icons.contact-icon {
+  font-size: 160px;
+  position: absolute;
+  right: 20px;
+  top: 0;
+}
+.contact-list-item {
+  font-family: "Century Gothic", Arial, sans-serif;
+  width: 300px;
+  margin-bottom: 1em;
+  background-color: #222;
+  color: #aaa;
+}
+.contact-list-item-icon {
+  position: relative;
+  background: #333;
+  height: 100px;
+  overflow: hidden;
+}
+
+.contact-list-item .contact-list-item-data {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+.contact-list-item .contact-list-item-heading {
+  font-size: 1.3em;
+}
+
+@media (max-width: 360px) {
+  .contact-list-item {
+    width: 70%;
+  }
+}
+

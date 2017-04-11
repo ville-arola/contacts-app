@@ -1,0 +1,31 @@
+<div class="contact-dialog">
+<h1 md-dialog-title>{{(editMode ? 'Edit' : 'New')}} contact</h1>
+  <form>
+<md-dialog-content>
+  <md-input-container floatPlaceholder="auto">
+    <input mdInput name="firstName" [(ngModel)]="contact.firstName" type="text"
+           placeholder="First name">
+  </md-input-container>
+  <md-input-container floatPlaceholder="auto">
+    <input mdInput name="lastName" [(ngModel)]="contact.lastName" type="text"
+           placeholder="Last name">
+  </md-input-container>
+  <md-input-container floatPlaceholder="auto">
+    <input mdInput name="phone" [(ngModel)]="contact.phone" type="text"
+           placeholder="Phone">
+  </md-input-container>
+  <md-input-container floatPlaceholder="auto">
+    <input mdInput name="streetAddress" [(ngModel)]="contact.streetAddress" type="text"
+           placeholder="Street address">
+  </md-input-container>
+  <md-input-container floatPlaceholder="auto">
+    <input mdInput name="city" [(ngModel)]="contact.city" type="text"
+           placeholder="City">
+  </md-input-container>
+</md-dialog-content>
+<md-dialog-actions>
+  <button md-button md-dialog-close (click)="closeDialog()">Cancel</button>
+  <button type="submit" md-button (click)="passContact()">{{(editMode ? 'Save' : 'Add')}}</button>
+</md-dialog-actions>
+  </form>
+</div>
