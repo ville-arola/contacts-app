@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MdDialogRef} from "@angular/material";
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-map-dialog',
@@ -7,18 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapDialogComponent implements OnInit {
 
-  private _address: string;
+  address: string;
+  mapUrl: string;
 
-  get address(): string {
-    return this._address;
+  constructor(public dialog: MdDialogRef<MapDialogComponent>, private sanitizer: DomSanitizer) { }
+
+  closeMap() {
+    this.dialog.close();
   }
 
-  set address(value: string) {
-    this._address = value;
+  getMapSrc(url) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
-
-  constructor() { }
 
   ngOnInit() {
+    this.mapUrl = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyDmUcAU7BWA5VkyY5KvP84kM8fc_bdXMoM&q=' + this.address;
   }
 }

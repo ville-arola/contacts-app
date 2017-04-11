@@ -16,6 +16,8 @@
   background: #333;
   height: 100px;
   overflow: hidden;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 
 .contact-list-item .contact-list-item-data {
@@ -27,9 +29,10 @@
   font-size: 1.3em;
 }
 
+/*
 @media (max-width: 360px) {
   .contact-list-item {
     width: 70%;
   }
 }
-
+*/

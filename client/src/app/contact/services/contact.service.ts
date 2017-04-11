@@ -11,11 +11,6 @@ export class ContactService {
 
   public getContacts(): Promise<Contact[]> {
     let contacts = this.localStorageService.loadContacts();
-    /*
-    contacts.push(new Contact('Ville', 'Arola', '81726812874', 'Katu', 'Kaupunki'));
-    contacts.push(new Contact('Matti', 'Meikäläinen', '81728742894', 'Katu 2', 'Kaupunki'));
-    contacts.push(new Contact('Erkki', 'Esimerkki', '1764866758', 'Katu 3', 'Kaupunki'));
-    */
     return Promise.resolve(contacts);
   }
 

@@ -1,0 +1,9 @@
+.map-dialog {
+  padding: 0.75em;
+}
+.close-map-button {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
