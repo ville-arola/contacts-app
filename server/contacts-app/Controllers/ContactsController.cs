@@ -24,19 +24,20 @@ namespace contacts_app.Controllers
         }
 
         [HttpGet("{id}", Name = "GetContact")]
-        public Contact GetById(int id)
+        public Contact GetById(string id)
         {
             return _contactService.FindContactById(id);
         }
 
         [HttpPost]
-        public int Post([FromBody] Contact contact)
+        public IActionResult Post([FromBody] Contact contact)
         {
-            return _contactService.SaveContact(contact);
+            _contactService.SaveContact(contact);
+            return NoContent();
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(int id, [FromBody] Contact contact)
+        public IActionResult Update(string id, [FromBody] Contact contact)
         {
             if (contact == null)
             {
@@ -57,7 +58,7 @@ namespace contacts_app.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(string id)
         {
             var contact = _contactService.FindContactById(id);
             if (contact == null)

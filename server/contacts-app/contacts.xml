@@ -1,11 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContactsList>
+<contacts>
   <contact>
-    <Key>1</Key>
-    <FirstName>Ville</FirstName>
-    <LastName>Arola</LastName>
-    <Phone>2397239467</Phone>
-    <StreetAddress>Jokukatu 4</StreetAddress>
-    <City>Jokukaupunki</City>
+    <id>4667729488</id>
+    <firstName>Matti</firstName>
+    <lastName>Meikalainen</lastName>
+    <phone>8928746996</phone>
+    <streetAddress>Jokukuja 12</streetAddress>
+    <city>Jokukaupunki</city>
   </contact>
-</ContactsList>
+</contacts>
