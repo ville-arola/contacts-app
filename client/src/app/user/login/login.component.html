@@ -1,0 +1,29 @@
+<form action="">
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <md-card fxLayout="column" fxLayoutAlign="center end">
+      <md-card-header fxLayout="column" fxLayoutAlign="center">
+        <h1>Contacts-app</h1>
+        <md-icon class="app-icon">people</md-icon>
+      </md-card-header>
+      <md-card-content>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+        <md-icon class="md-30">account_circle</md-icon>
+        <md-input-container floatPlaceholder="auto">
+          <input mdInput name="userName" [(ngModel)]="userName" type="text"
+                 placeholder="User name">
+        </md-input-container>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+        <md-icon class="md-30">check_circle</md-icon>
+        <md-input-container floatPlaceholder="auto">
+          <input mdInput name="password" [(ngModel)]="password" type="password"
+                 placeholder="Password">
+        </md-input-container>
+        </div>
+      </md-card-content>
+      <md-card-actions align="start">
+        <button md-button (click)="loginUser()">Login</button>
+      </md-card-actions>
+    </md-card>
+  </div>
+</form>

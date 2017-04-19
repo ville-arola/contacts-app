@@ -7,6 +7,7 @@
 .contact-list-item {
   font-family: "Century Gothic", Arial, sans-serif;
   width: 300px;
+  /*max-width: 400px;*/
   margin-bottom: 1em;
   background-color: #222;
   color: #aaa;
@@ -28,11 +29,3 @@
 .contact-list-item .contact-list-item-heading {
   font-size: 1.3em;
 }
-
-/*
-@media (max-width: 360px) {
-  .contact-list-item {
-    width: 70%;
-  }
-}
-*/

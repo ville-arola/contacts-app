@@ -6,7 +6,7 @@
   </div>
   <md-card-content class="contact-list-item-data">
     <h2 class="contact-list-item-heading">{{contact.firstName}} {{contact.lastName}}</h2>
-    <p>{{contact.streetAddress}}, {{contact.city}}<br />{{contact.phone}}</p>
+    <p>{{contact | address}}<br />{{contact.phone}}</p>
   </md-card-content>
   <md-card-actions fxLayout="row" fxLayoutAlign="space-between end">
     <div>
