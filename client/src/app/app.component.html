@@ -1,1 +1,21 @@
-<router-outlet></router-outlet>
+<md-sidenav-container>
+  <md-sidenav *ngIf="toolbarVisible" #sidenav [mode]="sidenavMode" [opened]="sidenavMode == 'side'" align="start">
+    <div class="user-info">
+      <md-icon class="md-30">account_circle</md-icon>
+      <div>
+        <md-card-title>Erkki Esimerkki</md-card-title>
+        <md-card-subtitle>erkki.esimerkki@gmail.com</md-card-subtitle>
+      </div>
+    </div>
+    <div class="sidenav-content">
+      Sidenav content
+    </div>
+  </md-sidenav>
+  <md-toolbar *ngIf="toolbarVisible">
+    <button md-icon-button (click)="toggleSidenav()">
+      <md-icon class="md-30">dehaze</md-icon>
+    </button>
+    <span>Title</span>
+  </md-toolbar>
+  <router-outlet></router-outlet>
+</md-sidenav-container>

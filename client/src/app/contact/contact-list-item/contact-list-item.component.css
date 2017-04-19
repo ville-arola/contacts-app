@@ -1,24 +1,22 @@
 .material-icons.contact-icon {
-  font-size: 160px;
-  position: absolute;
-  right: 20px;
-  top: 0;
+  font-size: 80px;
 }
 .contact-list-item {
   font-family: "Century Gothic", Arial, sans-serif;
-  width: 300px;
-  /*max-width: 400px;*/
-  margin-bottom: 1em;
+  margin: 1em 1em 0 1em;
   background-color: #222;
   color: #aaa;
 }
+
 .contact-list-item-icon {
-  position: relative;
   background: #333;
-  height: 100px;
-  overflow: hidden;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  padding: 1em;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+md-card-content {
+  margin: 1em 1.5em;
 }
 
 .contact-list-item .contact-list-item-data {
