@@ -9,6 +9,7 @@ import { NgPipesModule } from 'ngx-pipes';
 import { AppComponent } from './app.component';
 import { ContactListComponent } from './contact/contact-list/contact-list.component';
 import { ContactService } from "./contact/services/contact.service";
+import { ContactApiService } from "./contact/services/contact-api.service";
 import { ContactListItemComponent } from './contact/contact-list-item/contact-list-item.component';
 import { ContactDialogComponent } from './contact/contact-dialog/contact-dialog.component';
 import { MapDialogComponent } from './contact/map-dialog/map-dialog.component';
@@ -57,7 +58,7 @@ const routes: Route[] = [
     RouterModule.forRoot(routes)
   ],
   entryComponents: [ContactDialogComponent, MapDialogComponent],
-  providers: [ContactService, DialogService, LocalStorageService],
+  providers: [ContactService, DialogService, LocalStorageService, ContactApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

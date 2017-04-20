@@ -4,7 +4,6 @@ import {Contact} from "../contact";
 import {DialogService} from "../services/dialog.service";
 
 
-
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -17,12 +16,19 @@ export class ContactComponent implements OnInit {
 
   constructor(private contactService: ContactService, private dialog: DialogService) {}
 
+  loadContacts() {
+    this.contactService.getContacts().subscribe(contacts => {
+      this.contacts = contacts;
+    });
+  }
+
   addContact(): void {
     let input = this.dialog.contactDialog();
     input.subscribe(result => {
       if (result) {
-        this.contactService.addContact(result);
-        this.loadContacts();
+        this.contactService.addContact(result).subscribe(response => {
+          this.loadContacts();
+        });
       }
     });
   }
@@ -31,24 +37,22 @@ export class ContactComponent implements OnInit {
     let input = this.dialog.contactDialog(contact);
     input.subscribe(result => {
       if (result) {
-        this.contactService.updateContact(result);
-        this.loadContacts();
+        this.contactService.updateContact(result).subscribe(response => {
+          this.loadContacts();
+        });
       }
     });
   }
 
   removeContact(contact: Contact): void {
-    this.contactService.removeContact(contact.id);
-    this.loadContacts();
+    this.contactService.removeContact(contact.id).subscribe(response => {
+      this.loadContacts();
+    });
   }
 
   showContactOnMap(contact: Contact): void {
     let addressString = contact.streetAddress + ', ' + contact.city;
     this.dialog.mapDialog(addressString);
-  }
-
-  loadContacts() {
-    this.contactService.getContacts().then(contacts => this.contacts = contacts);
   }
 
   ngOnInit(): void {

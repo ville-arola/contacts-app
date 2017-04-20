@@ -1,40 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Contact } from "../contact";
-import * as _ from "lodash";
-import {LocalStorageService} from "./local-storage.service";
+import { LocalStorageService } from "./local-storage.service";
+import { ContactApiService } from "./contact-api.service";
 
 @Injectable()
 export class ContactService {
 
-  constructor(private localStorageService: LocalStorageService) {
+  constructor(private localStorageService: LocalStorageService,
+              private contactApiService: ContactApiService) {
   }
 
-  public getContacts(): Promise<Contact[]> {
-    let contacts = this.localStorageService.loadContacts();
-    return Promise.resolve(contacts);
+  public getContacts() {
+    return this.contactApiService.loadContacts();
   }
 
-  public addContact(contact: Contact): void {
-    let contacts = this.localStorageService.loadContacts();
-    contacts.push(contact);
-    this.localStorageService.saveContacts(contacts);
+  public addContact(contact: Contact) {
+    return this.contactApiService.saveContact(contact);
   }
 
-  public updateContact(contact: Contact): void {
-    let contacts = this.localStorageService.loadContacts();
-    let index = _.findIndex(contacts, ['id', contact.id]);
-    if (index >= 0) {
-      contacts.splice(index, 1, contact);
-      this.localStorageService.saveContacts(contacts);
-    }
+  public updateContact(contact: Contact) {
+    return this.contactApiService.updateContact(contact);
   }
 
-  public removeContact(id: string): void {
-    let contacts = this.localStorageService.loadContacts();
-    let index = _.findIndex(contacts, ['id', id]);
-    if (index >= 0) {
-      contacts.splice(index, 1);
-      this.localStorageService.saveContacts(contacts);
-    }
+  public removeContact(id: string) {
+    return this.contactApiService.removeContact(id);
   }
 }

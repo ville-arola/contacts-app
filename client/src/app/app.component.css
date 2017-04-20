@@ -7,10 +7,14 @@ md-sidenav {
   min-width: 250px;
   max-width: 400px;
   font-size: 1.25em;
-  /*background-color: #0f0;*/
+  background-color: #000;
+  color: #888;
 }
 div.user-info {
   padding: 1em;
+  color: #fff;
+  background-color: #f0f;
+  /*background-image: url('http://ffgd.jpg');*/
 }
 div.sidenav-content {
   margin: 1em;
@@ -23,7 +27,8 @@ md-menu {
   color: #888;
 }
 md-toolbar {
-  /*background-color: #f0f;*/
+  background-color: #111;
+  color: #888;
 }
 
 .app-wrap {

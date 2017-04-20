@@ -39,3 +39,7 @@ button {
 button:active {
   background-color: rgb(200, 255, 30) !important;
 }
+
+button[disabled], button[disabled]:active {
+  background-color: #444 !important;
+}

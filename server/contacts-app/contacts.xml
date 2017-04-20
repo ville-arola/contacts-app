@@ -7,4 +7,12 @@
     <streetAddress>Jokukuja 12</streetAddress>
     <city>Jokukaupunki</city>
   </contact>
+  <contact>
+    <id>1492674771869</id>
+    <firstName>Keijo</firstName>
+    <lastName>Kolehmainen</lastName>
+    <phone>8347568745</phone>
+    <streetAddress>Jokukatu 4</streetAddress>
+    <city>Jokukaupunki</city>
+  </contact>
 </contacts>

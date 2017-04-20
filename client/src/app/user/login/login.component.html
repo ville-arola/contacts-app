@@ -9,20 +9,20 @@
         <div fxLayout="row" fxLayoutAlign="space-between center">
         <md-icon class="md-30">account_circle</md-icon>
         <md-input-container floatPlaceholder="auto">
-          <input mdInput name="userName" [(ngModel)]="userName" type="text"
+          <input mdInput name="userName" [(ngModel)]="userName" (ngModelChange)="checkInputs()" type="text"
                  placeholder="User name">
         </md-input-container>
         </div>
         <div fxLayout="row" fxLayoutAlign="space-between center">
         <md-icon class="md-30">lock_open</md-icon>
         <md-input-container floatPlaceholder="auto">
-          <input mdInput name="password" [(ngModel)]="password" type="password"
+          <input mdInput name="password" [(ngModel)]="password" (ngModelChange)="checkInputs()" type="password"
                  placeholder="Password">
         </md-input-container>
         </div>
       </md-card-content>
       <md-card-actions align="start">
-        <button md-button (click)="loginUser()">Login</button>
+        <button md-button (click)="loginUser()" disabled>Login</button>
       </md-card-actions>
     </md-card>
   </div>
