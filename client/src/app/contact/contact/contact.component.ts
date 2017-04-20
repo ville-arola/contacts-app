@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ContactService} from "../services/contact.service";
-import {Contact} from "../contact";
-import {DialogService} from "../services/dialog.service";
+import { ContactService } from "../services/contact.service";
+import { Contact } from "../contact";
+import { DialogService } from "../services/dialog.service";
 
 
 @Component({

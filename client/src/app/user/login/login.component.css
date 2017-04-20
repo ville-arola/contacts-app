@@ -2,9 +2,11 @@ form > div {
   padding: 1em;
 }
 md-card-header {
+  background-image: url('../../../assets/app-bg.png');
+  background-size: cover;
   display: block;
   height: 150px;
-  margin: 3em 0;
+  max-width: 500px;
 }
 .app-icon {
   font-size: 120px;
@@ -16,6 +18,7 @@ md-card {
 }
 md-card-content {
   padding: 0;
+  max-width: 500px;
 }
 md-card-actions {
   padding: 0 1em 1em 0 !important;

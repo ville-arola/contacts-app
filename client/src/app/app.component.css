@@ -13,8 +13,9 @@ md-sidenav {
 div.user-info {
   padding: 1em;
   color: #fff;
-  background-color: #f0f;
-  /*background-image: url('http://ffgd.jpg');*/
+  background-color: #580;
+  background-image: url('../assets/app-bg.png');
+  background-size: cover;
 }
 div.sidenav-content {
   margin: 1em;
