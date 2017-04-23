@@ -1,13 +1,19 @@
-<div fxLayout="column" fxLayoutAlign="start center">
+<div class="ca-color-primary-light" fxLayout="column" fxLayoutAlign="start center">
   <div fxLayout="column" fxLayoutAlign="start end">
-    <app-contact-list
+    <app-contact-list *ngIf="contacts; else elseBlock"
       [contacts]="contacts"
       (editContact)="editContact($event)"
       (removeContact)="removeContact($event)"
       (showContactOnMap)="showContactOnMap($event)"
     >
     </app-contact-list>
-    <button class="app-button" md-fab (click)="addContact()">
+    <ng-template #elseBlock>
+      <div class="list-placeholder" fxLayout="column" fxLayoutAlign="start center">
+        <md-icon>people</md-icon>
+        <span>No contacts</span>
+      </div>
+    </ng-template>
+    <button class="app-button ca-color-accent" md-fab (click)="addContact()">
       <md-icon>add</md-icon>
     </button>
   </div>

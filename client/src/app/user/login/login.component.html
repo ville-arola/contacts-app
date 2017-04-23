@@ -1,55 +1,35 @@
-<form action="">
-  <!--
-  <div fxLayout="column" fxLayoutAlign="center center">
-    <md-card fxLayout="column" fxLayoutAlign="center end">
-      <md-card-header md-card-image fxLayout="column" fxLayoutAlign="center">
-        <h1>Contacts-app</h1>
-        <md-icon class="app-icon">people</md-icon>
-      </md-card-header>
-      <md-card-content>
-        <div fxLayout="row" fxLayoutAlign="space-between center">
-        <md-icon class="md-30">account_circle</md-icon>
-        <md-input-container floatPlaceholder="auto">
-          <input mdInput name="userName" [(ngModel)]="userName" (ngModelChange)="checkInputs()" type="text"
-                 placeholder="User name">
-        </md-input-container>
+<div class="login-wrap" fxLayout="row" fxLayoutAlign="center">
+  <md-card fxLayout="column" fxLayoutAlign="start stretch" >
+    <div class="login-header" md-card-image fxLayout="row" fxLayoutAlign="start end">
+      <md-icon class="app-icon">people</md-icon>
+      <h1>Contacts-app</h1>
+    </div>
+    <div class="login-form" fxLayout="column" fxLayoutAlign="start center">
+      <form action="" fxLayout="column" fxLayoutAlign="end end">
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <md-icon class="md-30">account_circle</md-icon>
+          <md-input-container floatPlaceholder="auto">
+            <input mdInput name="userName"
+                   [(ngModel)]="user.userName"
+                   type="text"
+                   placeholder="User name">
+          </md-input-container>
         </div>
-        <div fxLayout="row" fxLayoutAlign="space-between center">
-        <md-icon class="md-30">lock_open</md-icon>
-        <md-input-container floatPlaceholder="auto">
-          <input mdInput name="password" [(ngModel)]="password" (ngModelChange)="checkInputs()" type="password"
-                 placeholder="Password">
-        </md-input-container>
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <md-icon class="md-30">lock_open</md-icon>
+          <md-input-container floatPlaceholder="auto">
+            <input mdInput name="password"
+                   [(ngModel)]="user.password"
+                   type="password"
+                   placeholder="Password">
+          </md-input-container>
         </div>
-      </md-card-content>
-      <md-card-actions align="start">
-        <button md-button (click)="loginUser()" disabled>Login</button>
-      </md-card-actions>
-    </md-card>
-  </div>
-  -->
-  <md-card>
-    <md-card-header md-card-image>
-      <md-card-title><h1>Contacts-app</h1></md-card-title>
-    </md-card-header>
-    <md-card-content>
-      <div fxLayout="row" fxLayoutAlign="space-between center">
-        <md-icon class="md-30">account_circle</md-icon>
-        <md-input-container floatPlaceholder="auto">
-          <input mdInput name="userName" [(ngModel)]="userName" (ngModelChange)="checkInputs()" type="text"
-                 placeholder="User name">
-        </md-input-container>
-      </div>
-      <div fxLayout="row" fxLayoutAlign="space-between center">
-        <md-icon class="md-30">lock_open</md-icon>
-        <md-input-container floatPlaceholder="auto">
-          <input mdInput name="password" [(ngModel)]="password" (ngModelChange)="checkInputs()" type="password"
-                 placeholder="Password">
-        </md-input-container>
-      </div>
-    </md-card-content>
-    <md-card-actions align="start">
-      <button md-button (click)="loginUser()" disabled>Login</button>
-    </md-card-actions>
+        <div fxLayout="row" fxLayoutAlign="end">
+          <button class="login-button" md-raised-button (click)="loginUser()" color="accent"
+                  [disabled]="!(user.userName && user.password)">Log
+            in</button>
+        </div>
+      </form>
+    </div>
   </md-card>
-</form>
+</div>

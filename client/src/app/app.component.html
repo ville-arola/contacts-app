@@ -1,10 +1,12 @@
-<md-sidenav-container>
-  <md-sidenav *ngIf="toolbarVisible" #sidenav [mode]="sidenavMode" [opened]="sidenavMode == 'side'" align="start">
-    <div class="user-info">
-      <md-icon class="md-30">account_circle</md-icon>
+<md-sidenav-container class="ca-color-primary-light">
+  <md-sidenav *ngIf="toolbarVisible" #sidenav [mode]="sidenavMode"
+              [opened]="sidenavMode == 'side'"
+              align="start">
+    <div class="user-info" fxLayout="row" fxLayoutAlign="start">
+      <i class="material-icons user-icon">account_circle</i>
       <div>
-        <md-card-title>Erkki Esimerkki</md-card-title>
-        <md-card-subtitle>erkki.esimerkki@gmail.com</md-card-subtitle>
+        <h2>Erkki Esimerkki</h2>
+        <span>erkki.esimerkki@gmail.com</span>
       </div>
     </div>
     <div class="sidenav-content">
@@ -15,7 +17,6 @@
     <button md-icon-button (click)="toggleSidenav()">
       <md-icon class="md-30">dehaze</md-icon>
     </button>
-    <span>Title</span>
   </md-toolbar>
   <router-outlet></router-outlet>
 </md-sidenav-container>

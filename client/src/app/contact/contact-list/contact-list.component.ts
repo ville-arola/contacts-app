@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Contact} from "../contact";
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Contact } from "../contact";
 
 @Component({
   selector: 'app-contact-list',

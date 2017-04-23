@@ -1,6 +1,6 @@
-import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
-import {NavigationEnd, Router} from "@angular/router";
-import {MdSidenav} from "@angular/material";
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { NavigationEnd, Router } from "@angular/router";
+import { MdSidenav } from "@angular/material";
 
 @Component({
   selector: 'app-root',
@@ -29,7 +29,7 @@ export class AppComponent implements OnInit{
     this.sidenavMode = width >= 600 ? 'side' : 'over';
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.onWindowResize(null);
   }
 

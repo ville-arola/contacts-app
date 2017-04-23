@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {Contact} from "../contact";
+import { Contact } from "../contact";
 import * as _ from "lodash";
 
 @Pipe({

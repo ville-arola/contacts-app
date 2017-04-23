@@ -1,42 +1,32 @@
 md-sidenav-container {
-  background-color: transparent;
   height: 100vh;
 }
 md-sidenav {
   width: 20vw;
-  min-width: 250px;
+  min-width: 320px;
   max-width: 400px;
   font-size: 1.25em;
-  background-color: #000;
-  color: #888;
 }
-div.user-info {
+.user-info {
   padding: 1em;
-  color: #fff;
-  background-color: #580;
   background-image: url('../assets/app-bg.png');
   background-size: cover;
+  color: #fff;
 }
-div.sidenav-content {
+.user-info h2 {
+  font-size: 1.1em;
+  line-height: 1em;
+}
+.user-info span {
+  font-size: 0.9em;
+}
+.material-icons.user-icon {
+  font-size: 50px;
+  margin-right: 10px;
+}
+.user-info h2 {
+  margin: 0;
+}
+.sidenav-content {
   margin: 1em;
-}
-md-menu {
-  display: block;
-  height: 75px;
-  background-color: #000;
-  margin-bottom: 1em;
-  color: #888;
-}
-md-toolbar {
-  background-color: #111;
-  color: #888;
-}
-
-.app-wrap {
-  float: right !important;
-}
-
-.app-button {
-  background-color: #790;
-  margin-right: 1em;
 }

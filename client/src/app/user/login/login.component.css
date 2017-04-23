@@ -1,48 +1,69 @@
-form > div {
-  padding: 1em;
-}
-md-card-header {
-  background-image: url('../../../assets/app-bg.png');
-  background-size: cover;
-  display: block;
-  height: 150px;
-  max-width: 500px;
-}
-.app-icon {
-  font-size: 120px;
+.login-wrap {
+  position: relative;
+  top: 10vh;
+  overflow: hidden;
 }
 md-card {
   font-family: "Century Gothic", Arial, sans-serif;
-  background-color: #222;
-  color: #aaa;
+  overflow: hidden;
+  border-radius: 3px;
 }
-md-card-content {
+.login-header {
+  color: #fff;
+  background-image: url('../../../assets/app-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 1.5em;
+}
+.login-header h1 {
+  margin: 0;
   padding: 0;
-  max-width: 500px;
+  line-height: 1em;
+  font-size: 2em;
 }
-md-card-actions {
-  padding: 0 1em 1em 0 !important;
+.app-icon {
+  display: block;
+  width: 1em;
+  height: 0.7em;
+  font-size: 100px;
+  color: #fff;
+  margin: 0;
+  margin-bottom: -0.2em;
+  margin-right: 0.1em;
+  padding: 0;
+}
+.login-form {
+  background-color: #fff;
+  padding: 2em 0;
+  padding-bottom: 2.5em;
 }
 md-icon {
   margin-right: 15px;
   margin-bottom: 15px;
+  color: #878787;
 }
-md-input-container {
-  display: block;
-  margin: 1em 0;
-  color: #888;
-}
-input {
-  color: #888;
-}
-button {
-  background-color: rgba(200, 255, 30, 0.5) !important;
-  color: #000;
-}
-button:active {
-  background-color: rgb(200, 255, 30) !important;
+.login-button {
+  margin-top: 1em;
 }
 
-button[disabled], button[disabled]:active {
-  background-color: #444 !important;
+@media all and (max-width: 400px) {
+  .login-wrap {
+    width: auto;
+    height: 100vh;
+    position: static;
+  }
+  md-card {
+    width: 100vw;
+  }
+  .login-header {
+    padding-top: 30px;
+  }
+  .app-icon {
+    font-size: 80px;
+    margin-bottom: -0.25em;
+  }
+  .login-header h1 {
+    font-size: 1.5em;
+    margin-bottom: -0.3em;
+  }
 }

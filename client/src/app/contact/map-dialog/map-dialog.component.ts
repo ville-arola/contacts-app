@@ -1,6 +1,6 @@
-import {Component, HostListener, OnInit} from '@angular/core';
-import {MdDialogRef} from "@angular/material";
-import {DomSanitizer} from "@angular/platform-browser";
+import { Component, HostListener, OnInit } from '@angular/core';
+import { MdDialogRef } from "@angular/material";
+import { DomSanitizer } from "@angular/platform-browser";
 
 @Component({
   selector: 'app-map-dialog',

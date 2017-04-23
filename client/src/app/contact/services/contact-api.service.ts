@@ -32,4 +32,3 @@ export class ContactApiService implements ContactStorage{
     return this.http.delete(this.url + '/' + id);
   }
 }
-

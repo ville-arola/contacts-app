@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Contact} from "../contact";
-import {MdDialogRef} from "@angular/material";
+import { Contact } from "../contact";
+import { MdDialogRef } from "@angular/material";
 
 @Component({
   selector: 'app-contact-dialog',

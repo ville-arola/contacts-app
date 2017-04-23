@@ -1,12 +1,18 @@
-.app-wrap {
-  float: right !important;
-}
-
 .app-button {
-  background-color: #790;
   margin: 1em 1.5em;
 }
-
-@media (max-width: 400px) {
-
+.list-placeholder {
+  text-align: center;
+  opacity: 0.4;
+}
+.list-placeholder md-icon {
+  display: block;
+  font-size: 240px;
+  margin-left: -200px;
+}
+.list-placeholder span {
+  display: block;
+  margin: 180px -20px 0 0;
+  font-size: 1.75em;
+  font-weight: 900 !important;
 }
