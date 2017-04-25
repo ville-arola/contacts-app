@@ -2,7 +2,7 @@
   font-size: 80px;
 }
 .contact-list-item {
-  font-family: "Century Gothic", Arial, sans-serif;
+  font-family: 'Quicksand', 'Didact Gothic', Arial, sans-serif;
   margin: 1em 1em 0 1em;
 }
 
@@ -27,8 +27,12 @@ md-card-content {
   font-size: 1.3em;
 }
 
-@media all and (max-width: 815px) {
+@media all and (max-width: 600px) {
   md-card-content {
-    min-width: auto;
+    min-width: 0;
+  }
+  md-card {
+    max-width: none;
+    width: calc(100vw - 4em);
   }
 }

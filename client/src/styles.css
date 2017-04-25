@@ -7,8 +7,14 @@
   src: url('assets/fonts/material-icons.woff2') format('woff2');
 }
 
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+body, md-input-container, button {
+  font-family: 'Quicksand', 'Didact Gothic', Arial, sans-serif !important;
+}
+
 body {
-  font-family: "Segoe UI Light", Arial, sans-serif;
   font-size: 100%;
   margin: 0;
 }

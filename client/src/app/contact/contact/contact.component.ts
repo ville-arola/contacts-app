@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ContactService } from "../services/contact.service";
 import { Contact } from "../contact";
 import { DialogService } from "../services/dialog.service";
+import * as _ from "lodash";
 
 
 @Component({
@@ -57,5 +58,9 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadContacts();
+  }
+
+  notEmpty(): boolean {
+    return !_.isEmpty(this.contacts);
   }
 }

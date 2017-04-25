@@ -1,6 +1,6 @@
 <div class="ca-color-primary-light" fxLayout="column" fxLayoutAlign="start center">
   <div fxLayout="column" fxLayoutAlign="start end">
-    <app-contact-list *ngIf="contacts; else elseBlock"
+    <app-contact-list *ngIf="notEmpty(); else elseBlock"
       [contacts]="contacts"
       (editContact)="editContact($event)"
       (removeContact)="removeContact($event)"
