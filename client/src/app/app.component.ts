@@ -26,7 +26,7 @@ export class AppComponent implements OnInit{
   @HostListener('window:resize', ['$event'])
   onWindowResize(event) {
     let width = event ? event.target.innerWidth : window.innerWidth;
-    this.sidenavMode = width >= 600 ? 'side' : 'over';
+    this.sidenavMode = width >= 810 ? 'side' : 'over';
   }
 
   ngOnInit() {

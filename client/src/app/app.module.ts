@@ -19,6 +19,7 @@ import { AddressPipe } from './contact/pipes/address.pipe';
 import { ContactComponent } from './contact/contact/contact.component';
 import { Route, RouterModule } from "@angular/router";
 import { LoginComponent } from "./user/login/login.component";
+import { HapticClickDirective } from './directives/haptic-click.directive';
 
 const routes: Route[] = [
   {
@@ -45,7 +46,8 @@ const routes: Route[] = [
     MapDialogComponent,
     AddressPipe,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+    HapticClickDirective
   ],
   imports: [
     BrowserModule,
