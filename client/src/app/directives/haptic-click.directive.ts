@@ -5,9 +5,13 @@ import { Directive, HostListener } from '@angular/core';
 })
 export class HapticClickDirective {
 
-  constructor() { }
+  constructor() {
+    document.addEventListener('deviceready', () => {
+      console.log('cordova ready');
+    }, false);
+  }
 
   @HostListener('click') click() {
-    navigator.vibrate(150);
+    navigator.vibrate(25);
   }
 }
