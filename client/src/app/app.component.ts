@@ -17,7 +17,7 @@ export class AppComponent implements OnInit{
   constructor(private router: Router) {
     router.events.subscribe(event => {
       if(event instanceof NavigationEnd) {
-        console.log(event);
+        //console.log(event);
         this.toolbarVisible = event.urlAfterRedirects != '/login';
       }
     });
@@ -25,8 +25,9 @@ export class AppComponent implements OnInit{
 
   @HostListener('window:resize', ['$event'])
   onWindowResize(event) {
-    let width = event ? event.target.innerWidth : window.innerWidth;
-    this.sidenavMode = width >= 810 ? 'side' : 'over';
+    let width = document.body.clientWidth; //event ? event.target.innerWidth : window.innerWidth;
+    console.log(width + ' ' + (width >= 830));
+    this.sidenavMode = width >= 830 ? 'side' : 'over';
   }
 
   ngOnInit() {
