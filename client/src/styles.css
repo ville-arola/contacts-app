@@ -7,11 +7,15 @@
   src: url('assets/fonts/material-icons.woff2') format('woff2');
 }
 
-@import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
-@import url('https://fonts.googleapis.com/css?family=Quicksand');
+@font-face {
+  font-family: 'Quicksand';
+  font-weight: 400;
+  font-style: normal;
+  src: url('assets/fonts/Quicksand-regular.woff2') format('woff2');
+}
 
 body, md-input-container, button {
-  font-family: 'Quicksand', 'Didact Gothic', Arial, sans-serif !important;
+  font-family: 'Quicksand', Arial, sans-serif !important;
 }
 
 body {
@@ -37,3 +41,13 @@ body {
 
 /* Rules for sizing the icon. */
 .material-icons.md-30 { font-size: 30px; }
+
+/*
+@media
+(-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi) {
+  body {
+
+  }
+}
+*/
