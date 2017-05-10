@@ -4,7 +4,7 @@ md-sidenav-container {
 md-sidenav {
   width: 20vw;
   min-width: 320px;
-  max-width: 400px;
+  max-width: 90vw;
   font-size: 1.25em;
 }
 .user-info {
@@ -30,3 +30,4 @@ md-sidenav {
 .sidenav-content {
   margin: 1em;
 }
+
