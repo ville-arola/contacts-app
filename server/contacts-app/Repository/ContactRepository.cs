@@ -26,16 +26,19 @@ namespace contacts_app.Repository
         public void Create(Contact contact)
         {
             _context.Contacts.Add(contact);
+            _context.SaveChanges();
         }
         
         public void Update(Contact contact)
         {
             _context.Contacts.Update(contact);
+            _context.SaveChanges();
         }
 
         public void Remove(int id)
         {
             _context.Contacts.Remove(GetById(id));
+            _context.SaveChanges();
         }
     }
 }
