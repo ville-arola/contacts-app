@@ -5,10 +5,10 @@ namespace contacts_app.Services
 {
     public interface IContactService
     {
-        List<Contact> FindAllContacts();
-        Contact FindContactById(string id);
-        void SaveContact(Contact contact);
-        void Remove(string id);
+        List<Contact> GetAll();
+        Contact GetById(int id);
+        void Add(Contact contact);
         void Update(Contact updatedContact);
+        void Remove(int id);
     }
 }

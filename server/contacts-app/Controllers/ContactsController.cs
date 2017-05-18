@@ -20,54 +20,31 @@ namespace contacts_app.Controllers
         [HttpGet]
         public List<Contact> GetAll()
         {
-            return _contactService.FindAllContacts();
+            return _contactService.GetAll();
         }
 
-        [HttpGet("{id}", Name = "GetContact")]
-        public Contact GetById(string id)
+        [HttpGet("{id}")]
+        public Contact GetById(int id)
         {
-            return _contactService.FindContactById(id);
+            return _contactService.GetById(id);
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] Contact contact)
+        public void Post([FromBody]Contact contact)
         {
-            _contactService.SaveContact(contact);
-            return NoContent();
+            _contactService.Add(contact);
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(string id, [FromBody] Contact contact)
+        public void Update(int id, [FromBody] Contact contact)
         {
-            if (contact == null)
-            {
-                return BadRequest();
-            }
-            var contactToUpdate = _contactService.FindContactById(id);
-            if (contactToUpdate == null)
-            {
-                return NotFound();
-            }
-            contactToUpdate.FirstName = contact.FirstName;
-            contactToUpdate.LastName = contact.LastName;
-            contactToUpdate.Phone = contact.Phone;
-            contactToUpdate.StreetAddress = contact.StreetAddress;
-            contactToUpdate.City = contact.City;
-            _contactService.Update(contactToUpdate);
-            return new NoContentResult();
+            _contactService.Update(contact);
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(string id)
+        public void Delete(int id)
         {
-            var contact = _contactService.FindContactById(id);
-            if (contact == null)
-            {
-                return NotFound();
-            }
-
             _contactService.Remove(id);
-            return new NoContentResult();
         }
     }
 }
