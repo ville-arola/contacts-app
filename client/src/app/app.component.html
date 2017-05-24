@@ -4,9 +4,9 @@
               align="start">
     <div class="user-info" fxLayout="row" fxLayoutAlign="start">
       <i class="material-icons user-icon">account_circle</i>
-      <div>
-        <h2>Erkki Esimerkki</h2>
-        <span>erkki.esimerkki@gmail.com</span>
+      <div *ngIf="this.user">
+        <h2>{{this.user.firstName}} {{this.user.lastName}}</h2>
+        <span>{{this.user.email}}</span>
         <button md-raised-button color="primary" (click)="logOut()">Log out</button>
       </div>
     </div>

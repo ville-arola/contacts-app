@@ -19,7 +19,17 @@ namespace contacts_app.Controllers
         public IActionResult Login()
         {
             var user = _userService.GetByUserName(User.Identity.Name);
-            return new JsonResult(user);
+            if (user != null)
+            {
+                return new JsonResult(new
+                {
+                    user.UserName,
+                    user.Email,
+                    user.FirstName,
+                    user.LastName
+                });
+            }
+            return null;
         }
     }
 }

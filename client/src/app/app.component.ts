@@ -2,6 +2,8 @@ import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from "@angular/router";
 import { MdSidenav } from "@angular/material";
 import {HttpService} from "./contact/services/http.service";
+import {UserService} from "./user/services/user.service";
+import {User} from "./user/user";
 
 @Component({
   selector: 'app-root',
@@ -12,14 +14,16 @@ export class AppComponent implements OnInit{
 
   toolbarVisible: boolean;
   sidenavMode: string;
+  user: User;
 
   @ViewChild('sidenav') sidenav: MdSidenav;
 
-  constructor(private router: Router, private http: HttpService) {
+  constructor(private router: Router, private http: HttpService, private userService: UserService) {
     router.events.subscribe(event => {
       if(event instanceof NavigationEnd) {
         //console.log(event);
         this.toolbarVisible = event.urlAfterRedirects != '/login';
+        this.user = this.userService.getUser();
       }
     });
   }

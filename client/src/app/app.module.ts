@@ -17,7 +17,7 @@ import { DialogService } from "./contact/services/dialog.service";
 import { LocalStorageService } from "./contact/services/local-storage.service";
 import { AddressPipe } from './contact/pipes/address.pipe';
 import { ContactComponent } from './contact/contact/contact.component';
-import { Route, RouterModule } from "@angular/router";
+import {Route, Router, RouterModule} from "@angular/router";
 import { LoginComponent } from "./user/login/login.component";
 import { HapticClickDirective } from './directives/haptic-click.directive';
 import { HttpService } from "./contact/services/http.service";
@@ -41,8 +41,8 @@ const routes: Route[] = [
   }
 ];
 
-export function getHttp(backend: XHRBackend, options: RequestOptions) {
-  return new HttpService(backend, options);
+export function getHttp(backend: XHRBackend, options: RequestOptions, router: Router) {
+  return new HttpService(backend, options, router);
 }
 
 @NgModule({
@@ -79,7 +79,7 @@ export function getHttp(backend: XHRBackend, options: RequestOptions) {
     {
       provide: HttpService,
       useFactory: getHttp,
-      deps: [XHRBackend, RequestOptions]
+      deps: [XHRBackend, RequestOptions, Router]
     },
   ],
   bootstrap: [AppComponent]

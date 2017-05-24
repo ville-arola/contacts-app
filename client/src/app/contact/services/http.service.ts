@@ -3,6 +3,7 @@ import {Http, XHRBackend, RequestOptions, Request, RequestOptionsArgs, Response,
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import {Router} from "@angular/router";
 
 @Injectable()
 export class HttpService extends Http {
@@ -10,7 +11,7 @@ export class HttpService extends Http {
   private token: string;
   private storageKey = 'authentication-token';
 
-  constructor (backend: XHRBackend, options: RequestOptions) {
+  constructor (backend: XHRBackend, options: RequestOptions, private router: Router) {
     super(backend, options);
   }
 
@@ -31,7 +32,8 @@ export class HttpService extends Http {
   private catchAuthError (self: HttpService) {
     return (res: Response) => {
       console.log(res);
-      if (res.status === 401 || res.status === 403) {
+      if (res.status === 401) {
+        self.router.navigate(['/login']);
         console.log(res);
       }
       return Observable.throw(res);
@@ -49,7 +51,7 @@ export class HttpService extends Http {
 
   public destroyToken() {
     sessionStorage.clear();
-    this.token = '';
+    this.token = null;
   }
 
 }
