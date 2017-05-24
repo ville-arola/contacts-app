@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using contacts_app.Models;
 using contacts_app.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,6 +9,7 @@ namespace contacts_app.Controllers
 {
     [Route("api/contacts")]
     [EnableCors("MyPolicy")]
+    [Authorize("Bearer")]
     public class ContactsController : Controller
     {
         private readonly IContactService _contactService;

@@ -27,7 +27,7 @@ export class ContactService {
     return this.contactStorage.editContact(contact);
   }
 
-  public removeContact(id: string) {
+  public removeContact(id: number) {
     return this.contactStorage.removeContact(id);
   }
 }

@@ -42,7 +42,7 @@ export class LocalStorageService implements ContactStorage{
     return Observable.of(null);
   }
 
-  public removeContact(id: string): Observable<any> {
+  public removeContact(id: number): Observable<any> {
     if (id) {
       let contacts = this.loadContacts();
       let index = _.findIndex(contacts, ['id', id]);

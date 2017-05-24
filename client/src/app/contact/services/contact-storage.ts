@@ -5,5 +5,5 @@ export interface ContactStorage {
   getContacts(): Observable<Contact[]>
   addContact(contact: Contact): Observable<any>;
   editContact(contact: Contact): Observable<any>;
-  removeContact(id: string): Observable<any>;
+  removeContact(id: number): Observable<any>;
 }

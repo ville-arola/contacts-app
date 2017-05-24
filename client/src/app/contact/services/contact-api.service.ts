@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Contact } from "../contact";
-import { Http } from "@angular/http";
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { environment } from "../../../environments/environment";
 import { ContactStorage } from "./contact-storage";
+import {HttpService} from "./http.service";
 
 
 @Injectable()
@@ -12,7 +12,7 @@ export class ContactApiService implements ContactStorage{
 
   url = environment.endPointUrl + '/contacts';
 
-  constructor(private http: Http) {}
+  constructor(private http: HttpService) {}
 
   getContacts() {
     return this.http
@@ -28,7 +28,7 @@ export class ContactApiService implements ContactStorage{
     return this.http.put(this.url + '/' + contact.id, contact);
   }
 
-  removeContact(id: string) {
+  removeContact(id: number) {
     return this.http.delete(this.url + '/' + id);
   }
 }

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {ConnectionBackend, HttpModule, RequestOptions, XHRBackend} from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -17,9 +17,13 @@ import { DialogService } from "./contact/services/dialog.service";
 import { LocalStorageService } from "./contact/services/local-storage.service";
 import { AddressPipe } from './contact/pipes/address.pipe';
 import { ContactComponent } from './contact/contact/contact.component';
-import { Route, RouterModule } from "@angular/router";
+import {Route, Router, RouterModule} from "@angular/router";
 import { LoginComponent } from "./user/login/login.component";
 import { HapticClickDirective } from './directives/haptic-click.directive';
+import {HttpService} from "./contact/services/http.service";
+import {AuthenticationService} from "./user/services/authentication.service";
+import {UserService} from "./user/services/user.service";
+import {UserApiService} from "app/user/services/user-api.service";
 
 const routes: Route[] = [
   {
@@ -36,6 +40,10 @@ const routes: Route[] = [
     component: ContactComponent
   }
 ];
+
+export function getHttp(backend: XHRBackend, options: RequestOptions, router: Router) {
+  return new HttpService(backend, options, router);
+}
 
 @NgModule({
   declarations: [
@@ -60,7 +68,20 @@ const routes: Route[] = [
     RouterModule.forRoot(routes)
   ],
   entryComponents: [ContactDialogComponent, MapDialogComponent],
-  providers: [ContactService, DialogService, LocalStorageService, ContactApiService],
+  providers: [
+    ContactService,
+    AuthenticationService,
+    UserService,
+    UserApiService,
+    DialogService,
+    LocalStorageService,
+    ContactApiService,
+    {
+      provide: HttpService,
+      useFactory: getHttp,
+      deps: [XHRBackend, RequestOptions]
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
