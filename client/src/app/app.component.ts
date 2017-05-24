@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from "@angular/router";
 import { MdSidenav } from "@angular/material";
+import {HttpService} from "./contact/services/http.service";
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent implements OnInit{
 
   @ViewChild('sidenav') sidenav: MdSidenav;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private http: HttpService) {
     router.events.subscribe(event => {
       if(event instanceof NavigationEnd) {
         //console.log(event);
@@ -36,5 +37,10 @@ export class AppComponent implements OnInit{
 
   toggleSidenav(){
     this.sidenav.toggle();
+  }
+
+  logOut() {
+    this.http.destroyToken();
+    this.router.navigate(['/login']);
   }
 }

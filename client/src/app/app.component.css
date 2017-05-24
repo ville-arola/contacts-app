@@ -27,6 +27,11 @@ md-sidenav {
 .user-info h2 {
   margin: 0;
 }
+
+.user-info button {
+  margin: 1em 0 0;
+}
+
 .sidenav-content {
   margin: 1em;
 }

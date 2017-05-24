@@ -17,13 +17,13 @@ import { DialogService } from "./contact/services/dialog.service";
 import { LocalStorageService } from "./contact/services/local-storage.service";
 import { AddressPipe } from './contact/pipes/address.pipe';
 import { ContactComponent } from './contact/contact/contact.component';
-import {Route, Router, RouterModule} from "@angular/router";
+import { Route, RouterModule } from "@angular/router";
 import { LoginComponent } from "./user/login/login.component";
 import { HapticClickDirective } from './directives/haptic-click.directive';
-import {HttpService} from "./contact/services/http.service";
-import {AuthenticationService} from "./user/services/authentication.service";
-import {UserService} from "./user/services/user.service";
-import {UserApiService} from "app/user/services/user-api.service";
+import { HttpService } from "./contact/services/http.service";
+import { AuthenticationService } from "./user/services/authentication.service";
+import { UserService } from "./user/services/user.service";
+import { UserApiService } from "app/user/services/user-api.service";
 
 const routes: Route[] = [
   {
@@ -41,8 +41,8 @@ const routes: Route[] = [
   }
 ];
 
-export function getHttp(backend: XHRBackend, options: RequestOptions, router: Router) {
-  return new HttpService(backend, options, router);
+export function getHttp(backend: XHRBackend, options: RequestOptions) {
+  return new HttpService(backend, options);
 }
 
 @NgModule({
