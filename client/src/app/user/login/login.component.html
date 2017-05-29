@@ -10,18 +10,22 @@
           <md-icon class="md-30">account_circle</md-icon>
           <md-input-container floatPlaceholder="auto">
             <input mdInput name="userName"
+                   id="userName"
                    [(ngModel)]="user.userName"
                    type="text"
-                   placeholder="User name">
+                   placeholder="User name"
+                   (keypress)="handleEnter($event)">
           </md-input-container>
         </div>
         <div fxLayout="row" fxLayoutAlign="start center">
           <md-icon class="md-30">lock_open</md-icon>
           <md-input-container floatPlaceholder="auto">
             <input mdInput name="password"
+                   id="password"
                    [(ngModel)]="user.password"
                    type="password"
-                   placeholder="Password">
+                   placeholder="Password"
+                   (keypress)="handleEnter($event)">
           </md-input-container>
         </div>
         <div fxLayout="row" fxLayoutAlign="end">

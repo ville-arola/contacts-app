@@ -27,4 +27,18 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/contact']);
     });
   }
+
+  handleEnter(event) {
+    if (event.keyCode == 13) {
+      if (this.user.userName && this.user.password) {
+        this.loginUser();
+      }
+      else if (!this.user.userName) {
+        document.getElementById('userName').focus();
+      }
+      else if (!this.user.password) {
+        document.getElementById('password').focus();
+      }
+    }
+  }
 }
