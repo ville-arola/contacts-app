@@ -80,7 +80,7 @@ namespace contacts_app
                     ValidAudience = TokenAuthOption.Audience,
                     ValidIssuer = TokenAuthOption.Issuer,
                     ValidateIssuerSigningKey = true,
-                    ValidateLifetime = false,
+                    ValidateLifetime = true,
                     ClockSkew = TimeSpan.FromMinutes(0)
                 }
             });
