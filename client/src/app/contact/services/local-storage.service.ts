@@ -43,7 +43,7 @@ export class LocalStorageService implements ContactStorage{
   }
 
   public removeContact(id: number): Observable<any> {
-    if (id) {
+    if (id >= 0) {
       let contacts = this.loadContacts();
       let index = _.findIndex(contacts, ['id', id]);
       if (index >= 0) {

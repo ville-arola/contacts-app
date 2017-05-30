@@ -19,8 +19,8 @@ describe('ContactApiService', () => {
 
   function contactArray() {
     return [
-      new Contact('First', 'Contact', '28787468', 'Street address', 'City', 1278686386),
-      new Contact('Second', 'Contact', '28787468', 'Street address', 'City', 1297912837),
+      new Contact('First', 'Contact', '28787468', 'Street address', 'City', 1278686),
+      new Contact('Second', 'Contact', '28787468', 'Street address', 'City', 129791),
       new Contact('Third', 'Contact', '28787468', 'Street address', 'City', 287638)
     ];
   }
