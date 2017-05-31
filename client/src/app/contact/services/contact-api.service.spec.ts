@@ -2,8 +2,10 @@ import { inject, TestBed } from '@angular/core/testing';
 import { ContactApiService } from "./contact-api.service";
 import { Contact } from "../contact";
 import * as _ from "lodash";
-import {HttpModule, Response, ResponseOptions, XHRBackend} from "@angular/http";
+import {HttpModule, Response, ResponseOptions, XHRBackend, RequestOptions} from "@angular/http";
 import { MockBackend } from "@angular/http/testing";
+import {HttpService} from "./http.service";
+import {Router} from "@angular/router";
 
 describe('ContactApiService', () => {
 
@@ -12,7 +14,15 @@ describe('ContactApiService', () => {
       imports: [HttpModule],
       providers: [
         ContactApiService,
-        {provide: XHRBackend, useClass: MockBackend}
+        {provide: XHRBackend, useClass: MockBackend},
+        {
+          provide: HttpService,
+          useFactory: function (backend: XHRBackend, options: RequestOptions, router: Router) {
+            return new HttpService(backend, options, router);
+          },
+          deps: [XHRBackend, RequestOptions, Router]
+        },
+        {provide: Router}
       ]
     });
   });
