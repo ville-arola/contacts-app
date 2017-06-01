@@ -14,7 +14,7 @@ Node.js: Installed (https://nodejs.org)
 
 Cordova CLI: Installed
 ```
-npm instal -g cordova'
+npm install -g cordova
 ```
 Web app build
 ```
@@ -29,6 +29,7 @@ Visual Studio 2017: Installed
 Open Solution and Run server --> `http://localhost:60829/api`
 
 ## Run
+
 Using Web API:
 ```
 ng serve
@@ -44,14 +45,17 @@ The app will automatically reload if you change any of the source files.
 ## Cordova Hybrid app
 
 ### client build
+
 ```
 ng build --environment=local --output-path=../cordova/www 
 ```
 ### Run on Android device
+
 ```
 cordova run android
 ```
 ## Build
+
 ```
 ng build
 ```
@@ -66,11 +70,6 @@ ng build --environment=local --output-path=../cordova/www --base-href .
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
 
 ## Further help
 
