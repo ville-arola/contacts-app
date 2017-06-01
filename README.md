@@ -28,27 +28,25 @@ Visual Studio 2017: Installed
 Open Solution and Run server (`http://localhost:60829/api`)
 
 ## Run
+```
+Using Web API
+ng serve
 
-Using Web API: -> `ng serve`
-
-Using Local Storage: -> `ng serve --environment=local`
-
+Using Local Storage:
+ng serve --environment=local
 
 App runs at `http://localhost:4200/`
-
+```
 The app will automatically reload if you change any of the source files.
 
 ## Cordova Hybrid app
+```
+Client build
+ng build --environment=local --output-path=../cordova/www
 
-Client build -> `ng build --environment=local --output-path=../cordova/www`
-
-
-Run on Android device -> `cordova run android`
-
+Run on Android device
+cordova run android
+```
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
