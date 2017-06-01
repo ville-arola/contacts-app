@@ -8,20 +8,25 @@
 
 ### Client
 
-Angular CLI: Installed (`npm install -g @angular/cli`)
+Angular CLI: Installed `npm install -g @angular/cli`
+
 Node.js: Installed (https://nodejs.org)
+
+Cordova CLI: Installed
 ```
-npm install Cordova
+npm instal -g cordova'
 ```
-Cordova CLI: Installed (`npm instal -g cordova`)
-Web app build (`ng build --environment=local --base-href . --output-path=../cordova/www`)
+Web app build
+```
+ng build --environment=local --base-href . --output-path=../cordova/www
+```
 Execute `build_android.bat`
 
 ### Server
 
 Visual Studio 2017: Installed
-Open Solution and Run server
-`--> http://localhost:60829/api`
+
+Open Solution and Run server --> `http://localhost:60829/api`
 
 ## Run
 Using Web API:
@@ -33,6 +38,7 @@ Using Local Storage:
 ng serve --environment=local
 ```
 App runs at --> `http://localhost:4200/`
+
 The app will automatically reload if you change any of the source files.
 
 ## Cordova Hybrid app
@@ -50,11 +56,12 @@ cordova run android
 ng build
 ```
 Build can be found at
---> `client/dist/`
+`client/dist/`
 
-Building directly to cordova www dir:
+Building directly to `cordova/www` dir:
+```
 ng build --environment=local --output-path=../cordova/www --base-href .
---> `cordova/www/`
+```
 
 ## Running unit tests
 
