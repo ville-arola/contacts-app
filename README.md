@@ -35,7 +35,7 @@ ng serve
 Using Local Storage:
 ng serve --environment=local
 
-App runs at `http://localhost:4200/`
+App runs at http://localhost:4200/
 ```
 The app will automatically reload if you change any of the source files.
 
