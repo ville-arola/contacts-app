@@ -14,10 +14,10 @@ Node.js: Installed (https://nodejs.org)
 
 ### Cordova
 
-Cordova CLI: Installed -> `npm install -g cordova`
+Cordova CLI: Installed `npm install -g cordova`
 
 
-Web app build -> `ng build --environment=local --base-href . --output-path=../cordova/www`
+Web app build `ng build --environment=local --base-href . --output-path=../cordova/www`
 
 Or execute `build_android.bat`
 
@@ -29,7 +29,7 @@ Open Solution and Run server (`http://localhost:60829/api`)
 
 ## Run
 ```
-Using Web API
+Using Web API:
 ng serve
 
 Using Local Storage:
@@ -41,10 +41,10 @@ The app will automatically reload if you change any of the source files.
 
 ## Cordova Hybrid app
 ```
-Client build
+Client build:
 ng build --environment=local --output-path=../cordova/www
 
-Run on Android device
+Run on Android device:
 cordova run android
 ```
 ## Running unit tests
