@@ -28,6 +28,7 @@ Visual Studio 2017: Installed
 Open Solution and Run server (`http://localhost:60829/api`)
 
 ## Run
+### Client on development server
 ```
 Using Web API:
 ng serve
@@ -39,12 +40,9 @@ App runs at http://localhost:4200/
 ```
 The app will automatically reload if you change any of the source files.
 
-## Cordova Hybrid app
+### Cordova Hybrid app
 ```
-Client build:
 ng build --environment=local --output-path=../cordova/www
-
-Run on Android device:
 cordova run android
 ```
 ## Running unit tests
