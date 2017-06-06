@@ -46,6 +46,15 @@ md-icon {
   margin-top: 1em;
 }
 
+.legend {
+  font-family: 'Quicksand';
+  color: #f47;
+}
+
+.legend:after {
+  content: ' «'
+}
+
 @media all and (max-width: 600px) {
   .login-wrap {
     width: auto;

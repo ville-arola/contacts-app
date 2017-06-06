@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import { User } from "../user";
 import {UserService} from "../services/user.service";
 import {environment} from "../../../environments/environment";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,7 @@ import {environment} from "../../../environments/environment";
 export class LoginComponent implements OnInit {
 
   user: User;
+  legend: string;
 
   constructor(private router: Router, private userService: UserService) { }
 
@@ -21,11 +23,14 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser() {
-    this.userService.login(this.user.userName, this.user.password).subscribe(response => {
-      //console.log(response.json());
-      let user = new User('', 'Local', 'User', 'local.user@example.com');
+    this.userService.login(this.user.userName, this.user.password).catch(data => {
+      this.legend = 'Invalid login information';
+      return Observable.of(data);
+    }).subscribe(response => {
+      let user = new User(this.user.userName, 'Local', 'User', 'local.user@example.com');
       if (environment.endPointUrl) {
-        user = new User(response.json().userName, response.json().firstName, response.json().lastName, response.json().email);
+        let res = response.json();
+        user = new User(res.userName, res.firstName, res.lastName, res.email);
       }
       this.userService.setUser(user);
       this.router.navigate(['/contact']);

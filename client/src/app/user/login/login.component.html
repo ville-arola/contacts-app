@@ -28,6 +28,11 @@
                    (keypress)="handleEnter($event)">
           </md-input-container>
         </div>
+
+        <div *ngIf="this.legend" fxLayout="row" fxLayoutAlign="start center">
+          <span class="legend">{{this.legend}}</span>
+        </div>
+
         <div fxLayout="row" fxLayoutAlign="end">
           <button type="submit" class="login-button" hapticClick md-raised-button (click)="loginUser()" color="accent"
                   [disabled]="!(user.userName && user.password)">Log
