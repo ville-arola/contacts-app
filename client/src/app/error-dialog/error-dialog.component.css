@@ -1,0 +1,7 @@
+p {
+  color: #f47;
+}
+
+p:after {
+  content: ' «';
+}

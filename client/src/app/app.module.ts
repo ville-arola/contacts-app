@@ -24,6 +24,7 @@ import { HttpService } from "./contact/services/http.service";
 import { AuthenticationService } from "./user/services/authentication.service";
 import { UserService } from "./user/services/user.service";
 import { UserApiService } from "app/user/services/user-api.service";
+import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
 
 const routes: Route[] = [
   {
@@ -55,7 +56,8 @@ export function getHttp(backend: XHRBackend, options: RequestOptions, router: Ro
     AddressPipe,
     ContactComponent,
     LoginComponent,
-    HapticClickDirective
+    HapticClickDirective,
+    ErrorDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +69,7 @@ export function getHttp(backend: XHRBackend, options: RequestOptions, router: Ro
     NgPipesModule,
     RouterModule.forRoot(routes)
   ],
-  entryComponents: [ContactDialogComponent, MapDialogComponent],
+  entryComponents: [ContactDialogComponent, MapDialogComponent, ErrorDialogComponent],
   providers: [
     ContactService,
     AuthenticationService,

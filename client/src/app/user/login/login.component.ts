@@ -4,6 +4,7 @@ import { User } from "../user";
 import {UserService} from "../services/user.service";
 import {environment} from "../../../environments/environment";
 import {Observable} from "rxjs";
+import {DialogService} from "../../contact/services/dialog.service";
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   user: User;
   legend: string;
 
-  constructor(private router: Router, private userService: UserService) { }
+  constructor(private router: Router, private userService: UserService, private dialog: DialogService) { }
 
   ngOnInit() {
     this.user = new User();
@@ -24,7 +25,8 @@ export class LoginComponent implements OnInit {
 
   loginUser() {
     this.userService.login(this.user.userName, this.user.password).catch(data => {
-      this.legend = 'Invalid login information';
+      //this.legend = 'Invalid login information';
+      let tmp = this.dialog.errorDialog('Invalid login information');
       return Observable.of(data);
     }).subscribe(response => {
       let user = new User(this.user.userName, 'Local', 'User', 'local.user@example.com');
