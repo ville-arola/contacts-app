@@ -24,7 +24,7 @@ export class DialogService {
 
   public errorDialog(message: string) {
     let dialogRef = this.dialog.open(ErrorDialogComponent);
-    dialogRef.componentInstance.message = message;
+    dialogRef.componentInstance.init(message);
     return dialogRef.afterClosed();
   }
 }

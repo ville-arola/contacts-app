@@ -11,6 +11,11 @@ export class ErrorDialogComponent {
   message: string;
 
   constructor(public dialog: MdDialogRef<ErrorDialogComponent>) {
-    setTimeout(function() {dialog.close()}, 5000);
+  }
+
+  init(message: string) {
+    let dialog = this.dialog;
+    this.message = message;
+    setTimeout(function() {dialog.close()}, 1000 + 100 * message.length);
   }
 }
