@@ -4,7 +4,7 @@ import { User } from "../user";
 import {UserService} from "../services/user.service";
 import {environment} from "../../../environments/environment";
 import {Observable} from "rxjs";
-import {DialogService} from "../../contact/services/dialog.service";
+import {DialogService} from "../../utils/dialog.service";
 
 @Component({
   selector: 'app-login',

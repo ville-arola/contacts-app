@@ -4,7 +4,7 @@ import { Contact } from "../contact";
 import * as _ from "lodash";
 import {HttpModule, Response, ResponseOptions, XHRBackend, RequestOptions} from "@angular/http";
 import { MockBackend } from "@angular/http/testing";
-import {HttpService} from "./http.service";
+import {HttpService} from "../../utils/http.service";
 import {Router} from "@angular/router";
 
 describe('ContactApiService', () => {

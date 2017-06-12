@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { MdDialog } from "@angular/material";
-import { Contact } from "../contact";
-import { ContactDialogComponent } from "../contact-dialog/contact-dialog.component";
-import { MapDialogComponent } from "../map-dialog/map-dialog.component";
-import {ErrorDialogComponent} from "../../error-dialog/error-dialog.component";
+import { Contact } from "../contact/contact";
+import { ContactDialogComponent } from "../contact/contact-dialog/contact-dialog.component";
+import { MapDialogComponent } from "../contact/map-dialog/map-dialog.component";
+import {ErrorDialogComponent} from "../error-dialog/error-dialog.component";
 
 @Injectable()
 export class DialogService {

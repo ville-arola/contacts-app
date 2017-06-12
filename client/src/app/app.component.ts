@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from "@angular/router";
 import { MdSidenav } from "@angular/material";
-import {HttpService} from "./contact/services/http.service";
+import {HttpService} from "./utils/http.service";
 import {UserService} from "./user/services/user.service";
 import {User} from "./user/user";
 

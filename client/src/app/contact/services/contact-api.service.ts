@@ -4,7 +4,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { environment } from "../../../environments/environment";
 import { ContactStorage } from "./contact-storage";
-import {HttpService} from "./http.service";
+import {HttpService} from "../../utils/http.service";
 
 
 @Injectable()
